@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Champions League simulation</title>
+</head>
+
+<body>
+  <main>
+    <!-- section for the first and second pots (the first sixteenth best teams in Champions League) -->
+    <section class="draw--pots">
+
+      <section class="draw--pot1">
+        <p>Pot 1</p>
+        <img class="pot1--team1" src="clubs/manchesterCity.png" alt="Manchester City" data-team="Manchester City">
+        <img class="pot1--team2" src="clubs/sevilla.png" alt="Sevilla" data-team="Sevilla">
+        <img class="pot1--team3" src="clubs/barcelona.png" alt="Barcelona" data-team="Barcelona">
+        <img class="pot1--team4" src="clubs/napoli.png" alt="Napoli" data-team="Napoli">
+        <img class="pot1--team5" src="clubs/bayern.png" alt="Bayern" data-team="Bayern">
+        <img class="pot1--team6" src="clubs/psg.png" alt="PSG" data-team="PSG">
+        <img class="pot1--team7" src="clubs/benfica.png" alt="Benfica" data-team="Benfica">
+        <img class="pot1--team8" src="clubs/feyenoord.png" alt="Feyenoord" data-team="Feyenoord">
+        <div class="pot-btns">
+          <button class="btn-1" type="button">Draw Pot 1</button>
+        </div>
+      </section>
+
+      <section class="draw--pot2">
+        <p>Pot 2</p>
+        <img class="pot2--team1" src="clubs/realMadrid.png" alt="Real Madrid" data-team="Real Madrid">
+        <img class="pot2--team2" src="clubs/manchesterUnited.png" alt="Manchester United" data-team="Manchester United">
+        <img class="pot2--team3" src="clubs/internazionale.png" alt="Internazionale" data-team="Internazionale">
+        <img class="pot2--team4" src="clubs/borussia.png" alt="Borussia Dortmund" data-team="Borussia Dortmund">
+        <img class="pot2--team5" src="clubs/atletico.png" alt="Atletico Madrid" data-team="Atletico Madrid">
+        <img class="pot2--team6" src="clubs/rbLeipzig.png" alt="RB Leipzig" data-team="RB Leipzig">
+        <img class="pot2--team7" src="clubs/porto.png" alt="FC Porto" data-team="FC Porto">
+        <img class="pot2--team8" src="clubs/arsenal.png" alt="Arsenal FC" data-team="Arsenal FC">
+        <div class="pot-btns">
+          <button class="btn-2" type="button">Draw Pot 2</button>
+        </div>
+      </section>
+
+      <section class="draw--pot3">
+        <p>Pot 3</p>
+        <img class="pot3--team1" src="clubs/shakhtar.png" alt="Shakhtar" data-team="Shakhtar">
+        <img class="pot3--team2" src="clubs/fcsalzburg.png" alt="FC Salzburg" data-team="FC Salzburg">
+        <img class="pot3--team3" src="clubs/ACMilan.png" alt="AC Milan" data-team="AC Milan">
+        <img class="pot3--team4" src="clubs/braga.png" alt="Braga" data-team="Braga">
+        <img class="pot3--team5" src="clubs/psv.png" alt="PSV" data-team="PSV">
+        <img class="pot3--team6" src="clubs/lazio.png" alt="Lazio" data-team="Lazio">
+        <img class="pot3--team7" src="clubs/crvena.png" alt="Crvena" data-team="Crvena">
+        <img class="pot3--team8" src="clubs/kobenhavn.png" alt="Kobenhavn" data-team="Kobenhavn">
+        <div class="pot-btns">
+          <button class="btn-3" type="button">Draw Pot 3</button>
+        </div>
+
+      </section>
+
+      <section class="draw--pot4">
+        <p>Pot 4</p>
+        <img class="pot4--team1" src="clubs/youngBoys.png" alt="Young Boys" data-team="Young Boys">
+        <img class="pot4--team2" src="clubs/realSociedad.png" alt="Real Sociedad" data-team="Real Sociedad">
+        <img class="pot4--team3" src="clubs/galatasaray.png" alt="Galatasaray" data-team="Galatasaray">
+        <img class="pot4--team4" src="clubs/celtic.png" alt="Celtic" data-team="Celtic">
+        <img class="pot4--team5" src="clubs/newcastle.png" alt="Newcastle" data-team="Newcastle">
+        <img class="pot4--team6" src="clubs/unionBerlin.png" alt="Union Berlin" data-team="Union Berlin">
+        <img class="pot4--team7" src="clubs/antwerp.png" alt="Antwerp" data-team="Antwerp">
+        <img class="pot4--team8" src="clubs/lens.png" alt="Lens" data-team="Lens">
+        <div class="pot-btns">
+          <button class="btn-4" type="button">Draw Pot 4</button>
+        </div>
+      </section>
+    </section>
+
+    <!-- groups showing after drawing  -->
+
+  </main>
+  <script src="script.js"></script>
+
+  <div class="groupsAll--table">
+    <div class="groupA--table">
+      <div class="tblA--header">
+        <h2>Group A</h2>
+      </div>
+      <div class="tblA--container">
+        <div class="team1--cell">
+          <span class="tbl--text" id="groupA-team1">1</span>
+          <img src="" alt="resultTeam" id="resultTeamA1">
+        </div>
+        <div class="team2--cell">
+          <span class="tbl--text" id="groupA-team2">2</span>
+          <img src="" alt="resultTeam" id="resultTeamA2">
+        </div>
+        <div class="team3--cell">
+          <span class="tbl--text" id="groupA-team3">3</span>
+          <img src="" alt="resultTeam" id="resultTeamA3">
+        </div>
+        <div class="team4--cell">
+          <span class="tbl--text" id="groupA-team4">4</span>
+          <img src="" alt="resultTeam" id="resultTeamA4">
+        </div>
+      </div>
+    </div>
+    <div class="groupB--table">
+      <div class="tblB--header">
+        <h2>Group B</h2>
+      </div>
+      <div class="tblB--container">
+        <div class="team1--cell">
+          <span class="tbl--text" id="groupB-team1">1</span>
+          <img src="" alt="resultTeam" id="resultTeamB1">
+        </div>
+        <div class="team2--cell">
+          <span class="tbl--text" id="groupB-team2">2</span>
+          <img src="" alt="resultTeam" id="resultTeamB2">
+        </div>
+        <div class="team3--cell">
+          <span class="tbl--text" id="groupB-team3">3</span>
+          <img src="" alt="resultTeam" id="resultTeamB3">
+        </div>
+        <div class="team4--cell">
+          <span class="tbl--text" id="groupB-team4">4</span>
+          <img src="" alt="resultTeam" id="resultTeamB4">
+        </div>
+      </div>
+    </div>
+    <div class="groupC--table">
+      <div class="tblC--header">
+        <h2>Group C</h2>
+      </div>
+      <div class="tblC--container">
+        <div class="team1--cell">
+          <span class="tbl--text" id="groupC-team1">1</span>
+          <img src="" alt="resultTeam" id="resultTeamC1">
+        </div>
+        <div class="team2--cell">
+          <span class="tbl--text" id="groupC-team2">2</span>
+          <img src="" alt="resultTeam" id="resultTeamC2">
+        </div>
+        <div class="team3--cell">
+          <span class="tbl--text" id="groupC-team3">3</span>
+          <img src="" alt="resultTeam" id="resultTeamC3">
+        </div>
+        <div class="team4--cell">
+          <span class="tbl--text" id="groupC-team4">4</span>
+          <img src="" alt="resultTeam" id="resultTeamC4">
+        </div>
+      </div>
+    </div>
+    <div class="groupD--table">
+      <div class="tblD--header">
+        <h2>Group D</h2>
+      </div>
+      <div class="tblD--container">
+        <div class="team1--cell">
+          <span class="tbl--text" id="groupD-team1">1</span>
+          <img src="" alt="resultTeam" id="resultTeamD1">
+        </div>
+        <div class="team2--cell">
+          <span class="tbl--text" id="groupD-team2">2</span>
+          <img src="" alt="resultTeam" id="resultTeamD2">
+        </div>
+        <div class="team3--cell">
+          <span class="tbl--text" id="groupD-team3">3</span>
+          <img src="" alt="resultTeam" id="resultTeamD3">
+        </div>
+        <div class="team4--cell">
+          <span class="tbl--text" id="groupD-team4">4</span>
+          <img src="" alt="resultTeam" id="resultTeamD4">
+        </div>
+      </div>
+    </div>
+    <div class="groupE--table">
+      <div class="tblE--header">
+        <h2>Group E</h2>
+      </div>
+      <div class="tblE--container">
+        <div class="team1--cell">
+          <span class="tbl--text" id="groupE-team1">1</span>
+          <img src="" alt="resultTeam" id="resultTeamE1">
+        </div>
+        <div class="team2--cell">
+          <span class="tbl--text" id="groupE-team2">2</span>
+          <img src="" alt="resultTeam" id="resultTeamE2">
+        </div>
+        <div class="team3--cell">
+          <span class="tbl--text" id="groupE-team3">3</span>
+          <img src="" alt="resultTeam" id="resultTeamE3">
+        </div>
+        <div class="team4--cell">
+          <span class="tbl--text" id="groupE-team4">4</span>
+          <img src="" alt="resultTeam" id="resultTeamE4">
+        </div>
+      </div>
+    </div>
+    <div class="groupF--table">
+      <div class="tblF--header">
+        <h2>Group F</h2>
+      </div>
+      <div class="tblF--container">
+        <div class="team1--cell">
+          <span class="tbl--text" id="groupF-team1">1</span>
+          <img src="" alt="resultTeam" id="resultTeamF1">
+        </div>
+        <div class="team2--cell">
+          <span class="tbl--text" id="groupF-team2">2</span>
+          <img src="" alt="resultTeam" id="resultTeamF2">
+        </div>
+        <div class="team3--cell">
+          <span class="tbl--text" id="groupF-team3">3</span>
+          <img src="" alt="resultTeam" id="resultTeamF3">
+        </div>
+        <div class="team4--cell">
+          <span class="tbl--text" id="groupF-team4">4</span>
+          <img src="" alt="resultTeam" id="resultTeamF4">
+        </div>
+      </div>
+    </div>
+    <div class="groupG--table">
+      <div class="tblG--header">
+        <h2>Group G</h2>
+      </div>
+      <div class="tblG--container">
+        <div class="team1--cell">
+          <span class="tbl--text" id="groupG-team1">1</span>
+          <img src="" alt="resultTeam" id="resultTeamG1">
+        </div>
+        <div class="team2--cell">
+          <span class="tbl--text" id="groupG-team2">2</span>
+          <img src="" alt="resultTeam" id="resultTeamG2">
+        </div>
+        <div class="team3--cell">
+          <span class="tbl--text" id="groupG-team3">3</span>
+          <img src="" alt="resultTeam" id="resultTeamG3">
+        </div>
+        <div class="team4--cell">
+          <span class="tbl--text" id="groupG-team4">4</span>
+          <img src="" alt="resultTeam" id="resultTeamG4">
+        </div>
+      </div>
+    </div>
+    <div class="groupH--table">
+      <div class="tblH--header">
+        <h2>Group H</h2>
+      </div>
+      <div class="tblH--container">
+        <div class="team1--cell">
+          <span class="tbl--text" id="groupH-team1">1</span>
+          <img src="" alt="resultTeam" id="resultTeamH1">
+        </div>
+        <div class="team2--cell">
+          <span class="tbl--text" id="groupH-team2">2</span>
+          <img src="" alt="resultTeam" id="resultTeamH2">
+        </div>
+        <div class="team3--cell">
+          <span class="tbl--text" id="groupH-team3">3</span>
+          <img src="" alt="resultTeam" id="resultTeamH3">
+        </div>
+        <div class="team4--cell">
+          <span class="tbl--text" id="groupH-team4">4</span>
+          <img src="" alt="resultTeam" id="resultTeamH4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
