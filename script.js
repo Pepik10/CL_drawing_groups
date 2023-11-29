@@ -1,6 +1,6 @@
 'use strict';
 
-// Selecting teams (drawing Champions League group stages)
+//Selecting teams (drawing Champions League group stages)
 // selecting POT1
 const pot1T1 = document.querySelector('.pot1--team1');
 const pot1T2 = document.querySelector('.pot1--team2');
@@ -41,17 +41,13 @@ const pot4T6 = document.querySelector('.pot4--team6');
 const pot4T7 = document.querySelector('.pot4--team7');
 const pot4T8 = document.querySelector('.pot4--team8');
 
-// selecting group drawing buttons
+//selecting group drawing buttons
 const btnPot1 = document.querySelector('.btn-1');
 const btnPot2 = document.querySelector('.btn-2');
 const btnPot3 = document.querySelector('.btn-3');
 const btnPot4 = document.querySelector('.btn-4');
 
-// Grupy
-const groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-let currentGroupIndex = 0;
-let currentPositionInGroup = 1;
-
+//DRAWING GROUPS FUNCIONALITY
 // POT 1...
 let pot1Section = document.querySelector('.draw--pot1');
 let pot1Images = pot1Section.querySelectorAll('img[class^="pot1--team"]');
@@ -72,60 +68,113 @@ let pot4Section = document.querySelector('.draw--pot4');
 let pot4Images = pot4Section.querySelectorAll('img[class^="pot4--team"]');
 let pot4ImagesArray = Array.from(pot4Images);
 
-// Funkcja do przypisywania zespołu do konkretnej grupy i komórki
-function updateGroupTable(group, position, selectedTeam) {
-  const groupTeamImage = document.getElementById(
-    'resultTeam' + group + position
+// Grupy
+let groups = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']; // Możesz dostosować ilość grup według własnych potrzeb
+let currentGroupIndex = 0;
+
+let currentPositionInGroup = 1;
+
+// Funkcja do przypisywania zespołu do kolejnej grupy
+function przypiszDoGrupy(selectedTeam) {
+  // Pobierz aktualną grupę
+  let currentGroup = groups[currentGroupIndex];
+  // Pobieranie kontenera dla aktualnej grupy
+  let groupContainer = document.querySelector(
+    '.group' + currentGroup + '--table'
+  );
+  //Pobieranie indeksu wiersza (dla każdego koszyka inny indeks)
+  let rowIndex = currentPositionInGroup;
+
+  // Pobieranie elementów HTML dla aktualnej grupy
+  let groupTeamImage = groupContainer.querySelector(
+    'img[id^="resultTeam' + currentGroup + '"]'
   );
   groupTeamImage.src = selectedTeam.src;
+  // Przechodzenie do następnej grupy
+  currentGroupIndex++;
+  currentPositionInGroup++;
+
+  if (currentPositionInGroup > 4) {
+    currentPositionInGroup = 1;
+  }
+  // Sprawdzenie, czy doszliśmy do ostatniej grupy
+  if (currentGroupIndex === groups.length) {
+    currentGroupIndex = 0; // Jeśli tak, wróć do pierwszej grupy
+  }
 }
 
-// Ogólna funkcja do rysowania drużyn dla każdego koszyka
-function drawTeamsToGroups(potImagesArray, basketNumber) {
-  const drawButton = document.querySelector('.btn-' + basketNumber);
+// Dodanie obsługi zdarzenia dla kliknięcia przycisku
+btnPot1.addEventListener('click', function () {
+  // Losowanie indeksu zespołu z koszyka 1 (Pot 1)
+  let randomIndex = Math.floor(Math.random() * pot1ImagesArray.length);
+  // Pobierz wylosowany zespół
+  let selectedTeam = pot1ImagesArray[randomIndex];
+  // Wywołaj funkcję przypisującą do grupy
+  przypiszDoGrupy(selectedTeam);
+  // Usuń wylosowany zespół z tablicy pot1ImagesArray
+  let removedTeamIndex = pot1ImagesArray.indexOf(selectedTeam);
+  if (removedTeamIndex !== -1) {
+    pot1ImagesArray.splice(removedTeamIndex, 1);
+  }
+  // Wyświetlenie alertu o tym, że wszystkie drużyny z pierwszego koszyka zostały rozlosowane (tablica jest pusta)
+  if (pot1ImagesArray.length === 0) {
+    alert('Rozlosowałeś wszystkie drużyny z pierwszego koszyka');
+  }
+});
 
-  drawButton.addEventListener('click', function () {
-    if (potImagesArray.length === 0) {
-      alert('Rozlosowałeś wszystkie drużyny z koszyka ' + basketNumber);
-      return;
-    }
+btnPot2.addEventListener('click', function () {
+  // Losowanie indeksu zespołu z koszyka 2 (Pot 2)
+  let randomIndex = Math.floor(Math.random() * pot2ImagesArray.length);
+  // Pobierz wylosowany zespół
+  let selectedTeam = pot2ImagesArray[randomIndex];
+  // Wywołaj funkcję przypisującą do grupy
+  przypiszDoGrupy(selectedTeam);
+  // Usuń wylosowany zespół z tablicy pot1ImagesArray
+  let removedTeamIndex = pot2ImagesArray.indexOf(selectedTeam);
+  if (removedTeamIndex !== -1) {
+    pot2ImagesArray.splice(removedTeamIndex, 1);
+  }
 
-    const randomIndex = Math.floor(Math.random() * potImagesArray.length);
-    const selectedTeam = potImagesArray[randomIndex];
+  // Wyświetlenie alertu o tym, że wszystkie drużyny z pierwszego koszyka zostały rozlosowane (tablica jest pusta)
+  if (pot2ImagesArray.length === 0) {
+    alert('Rozlosowałeś wszystkie drużyny z pierwszego koszyka');
+  }
+});
 
-    const currentGroup = String.fromCharCode(
-      'A'.charCodeAt(0) + currentGroupIndex
-    );
+btnPot3.addEventListener('click', function () {
+  // Losowanie indeksu zespołu z koszyka 3 (Pot 3)
+  let randomIndex = Math.floor(Math.random() * pot3ImagesArray.length);
+  // Pobierz wylosowany zespół
+  let selectedTeam = pot3ImagesArray[randomIndex];
+  // Wywołaj funkcję przypisującą do grupy
+  przypiszDoGrupy(selectedTeam);
+  // Usuń wylosowany zespół z tablicy pot1ImagesArray
+  let removedTeamIndex = pot3ImagesArray.indexOf(selectedTeam);
+  if (removedTeamIndex !== -1) {
+    pot3ImagesArray.splice(removedTeamIndex, 1);
+  }
 
-    // Przypisz do odpowiedniej grupy i komórki
-    updateGroupTable(currentGroup, currentPositionInGroup, selectedTeam);
+  // Wyświetlenie alertu o tym, że wszystkie drużyny z pierwszego koszyka zostały rozlosowane (tablica jest pusta)
+  if (pot3ImagesArray.length === 0) {
+    alert('Rozlosowałeś wszystkie drużyny z pierwszego koszyka');
+  }
+});
 
-    const removedTeamIndex = potImagesArray.indexOf(selectedTeam);
-    if (removedTeamIndex !== -1) {
-      potImagesArray.splice(removedTeamIndex, 1);
-    }
+btnPot4.addEventListener('click', function () {
+  // Losowanie indeksu zespołu z koszyka 4 (Pot 4)
+  let randomIndex = Math.floor(Math.random() * pot4ImagesArray.length);
+  // Pobierz wylosowany zespół
+  let selectedTeam = pot4ImagesArray[randomIndex];
+  // Wywołaj funkcję przypisującą do grupy
+  przypiszDoGrupy(selectedTeam);
+  // Usuń wylosowany zespół z tablicy pot1ImagesArray
+  let removedTeamIndex = pot4ImagesArray.indexOf(selectedTeam);
+  if (removedTeamIndex !== -1) {
+    pot4ImagesArray.splice(removedTeamIndex, 1);
+  }
 
-    currentGroupIndex++;
-    currentPositionInGroup++;
-
-    if (currentPositionInGroup > 4) {
-      currentPositionInGroup = 1;
-    }
-
-    if (currentGroupIndex === groups.length) {
-      currentGroupIndex = 0;
-    }
-  });
-}
-
-// Przykład użycia dla przycisku "Draw Pot 1"
-drawTeamsToGroups(pot1ImagesArray, 1);
-
-// Przykład użycia dla przycisku "Draw Pot 2"
-drawTeamsToGroups(pot2ImagesArray, 2);
-
-// Przykład użycia dla przycisku "Draw Pot 3"
-drawTeamsToGroups(pot3ImagesArray, 3);
-
-// Przykład użycia dla przycisku "Draw Pot 4"
-drawTeamsToGroups(pot4ImagesArray, 4);
+  // Wyświetlenie alertu o tym, że wszystkie drużyny z pierwszego koszyka zostały rozlosowane (tablica jest pusta)
+  if (pot4ImagesArray.length === 0) {
+    alert('Rozlosowałeś wszystkie drużyny z pierwszego koszyka');
+  }
+});
